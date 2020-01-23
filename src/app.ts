@@ -1,8 +1,9 @@
 import { Category } from './enums';
 import { Book, Logger, Author, Librarian, Magazine } from './interfaces';
 import { UniversityLibrarian, ReferenceItem, RefBook, Shelf } from './classes';
-import { PersonBook, BookOrUndefined, BookReqiredFields } from './types';
+import { PersonBook, BookOrUndefined, BookReqiredFields, UpdatedBook, CreateCustomerFunctionType } from './types';
 import * as functions from './functions';
+import Encyclopedia from './classes/encyclopedia';
 
 showHello('greeting', 'TypeScript');
 
@@ -64,7 +65,7 @@ function showHello(divName: string, name: string) {
 //   category: Category.CSS,
 //   pages:200,
 //   markDamaged: (reason: string)=>console.log(`Damaged: ${reason}`)
-// } 
+// }
 
 // printBook(myBook);
 // myBook.markDamaged('Missing back cover');
@@ -198,12 +199,76 @@ function showHello(divName: string, name: string) {
 // console.log(result);
 
 // task 7.04
-const book: BookReqiredFields = {
-  id: 1,
-  title: 'Book title',
-  author: 'Anna',
-  available: false,
-  category: Category.Angular,
-  pages: 250,
-  markDamaged: null
-};
+// const book: BookReqiredFields = {
+//   id: 1,
+//   title: 'Book title',
+//   author: 'Anna',
+//   available: false,
+//   category: Category.Angular,
+//   pages: 250,
+//   markDamaged: null
+// };
+
+// const updatedBook: UpdatedBook = {
+//   id: 2
+// };
+
+// const params: Parameters<CreateCustomerFunctionType> = ['Anna'];
+// functions.createCustomer(...params);
+
+// task 8.01
+// const obj = new UniversityLibrarian();
+
+// task 8.02
+// const fLibrarian = new UniversityLibrarian();
+// fLibrarian.name = 'Anna';
+// console.log(fLibrarian);
+// (fLibrarian as any).printLibrarian();
+// fLibrarian['printLibrarian']();
+// Object.getPrototypeOf(fLibrarian).printLibrarian.apply(fLibrarian);
+
+// task 8.03
+// const fLibrarian = new UniversityLibrarian();
+// fLibrarian.assistFaculty = null;
+// fLibrarian.teachCommunity = null;
+
+// task 8.04
+// const enc = new Encyclopedia('The best Enceclopedia', 2020, 1);
+// enc.printItem();
+
+// task 8.05
+// const fLibrarian = new UniversityLibrarian();
+// fLibrarian.name = 'Anna';
+// fLibrarian.assistsCustomer('Boris');
+
+// task 8.06
+// const fLibrarian = new UniversityLibrarian();
+// fLibrarian.name = 'Anna';
+// console.log(fLibrarian.name);
+
+// task 8.07
+// const enc = new Encyclopedia('The best Enceclopedia', 2020, 1);
+// enc.copies = -10;
+// console.log(enc);
+
+// task 9.01
+// console.log('Begin');
+// functions.getBooksByCategory(Category.JavaScript, functions.logCategorySearch);
+// console.log('End');
+
+// task 9.02
+// console.log('Begin');
+// functions.getBooksByCategoryPromise(Category.JavaScript)
+// .then(titles => {
+//   console.log(titles);
+//   return titles.length;
+// })
+// .then(num => console.log(num))
+// .catch(reason => console.log(reason));
+// console.log('End');
+
+// task 9.03
+// console.log('Begin');
+// functions.logSearchResults(Category.Software)
+// .catch(reason => console.log(reason));
+// console.log('End');
